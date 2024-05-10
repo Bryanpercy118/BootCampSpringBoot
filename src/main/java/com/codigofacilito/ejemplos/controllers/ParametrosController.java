@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ParametrosController {
 
 	@GetMapping("/parametros")
-	public String parametros(@RequestParam String valor, Model model){
+	public String parametros(@RequestParam (defaultValue = "") String valor, Model model){
 		model.addAttribute("titulo","Parametros");
 		model.addAttribute("parametro",valor);
 		
