@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http//www.thymeleaf.org">
 	<head>
-		
+		<title th:text="${titulo}"></title>
 	</head>
 	<body>
-		<h1>Primera Prueba Spring Boot </h1>
+		<h1 th:text="${saludo}"></h1>
+		<div th:if="${show}")>
+			
+		</div>
+		
+		<div>
+			Mis Series
+			<ul th:each="serie: ${series}">
+				<li th:text="${serie}"></li>
+			</ul>
+		</div>
+		
 	</body>
 </html>
