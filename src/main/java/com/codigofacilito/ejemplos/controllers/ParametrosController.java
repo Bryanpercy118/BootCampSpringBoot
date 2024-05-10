@@ -10,7 +10,9 @@ public class ParametrosController {
 
 	@GetMapping("/parametros")
 	public String parametros(@RequestParam String valor, Model model){
+		model.addAttribute("titulo","Parametros");
 		model.addAttribute("parametro",valor);
+		
 		return "parametros";
 	}
 }
