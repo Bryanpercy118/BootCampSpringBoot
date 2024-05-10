@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -19,6 +22,17 @@ public class IndexController {
 		List<String> series = List.of("Dexter","Spiderman", "Vikings");
 		model.addAttribute("series",series);
 		return "index";
+	}
+	
+	@GetMapping(value="/index-mv")
+	public ModelAndView indexMv(ModelAndView mv){
+		mv.addObject("titulo","Titulo de mv");
+		mv.addObject("saludo","Saludo de mv");
+		mv.addObject("show",true);
+		List<String> series = List.of("Dexter","Spiderman", "Vikings");
+		mv.addObject("series",series);
+		mv.setViewName("index");
+		return mv;
 	}
 	
 	@PostMapping(value="/index-post")
