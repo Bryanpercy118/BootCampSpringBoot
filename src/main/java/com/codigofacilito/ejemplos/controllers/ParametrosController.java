@@ -36,7 +36,7 @@ public class ParametrosController {
 				model.addAttribute("juador",jugadorOptional.get());
 			}
 		}
-		return new String();
+		return "parametros";
 	}
 
 	private List<Equipo> getEquipos() {
@@ -54,6 +54,6 @@ public class ParametrosController {
 		realMadrid.addJugador(new Jugador("Xhavi", 6));
 		realMadrid.addJugador(new Jugador("Cristiano", 7));
 
-		return List.of();
+		return List.of(barcelona, realMadrid);
 	}
 }
